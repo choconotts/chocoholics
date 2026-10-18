@@ -3,11 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Chocoholics | Dessert shop in Nottingham</title>
-<meta name="description" content="The sweetest secret in Nottingham. Milkshakes, cookie dough, brownies, waffles and gelato at 91 Mansfield Road.">
+<title>Chocoholics | Late-night dessert shop in Nottingham</title>
+<link rel="canonical" href="https://choconotts.github.io/chocoholics/">
+<meta name="theme-color" content="#1a100b">
+<meta name="description" content="The sweetest secret in Nottingham. Milkshakes, cookie dough, brownies, waffles and gelato at 91 Mansfield Road. Open until 4am Friday to Sunday.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Chocoholics">
-<meta property="og:title" content="Chocoholics | Dessert shop in Nottingham">
+<meta property="og:title" content="Chocoholics | Late-night dessert shop in Nottingham">
 <meta property="og:description" content="The sweetest secret in Nottingham. Milkshakes, cookie dough, brownies, waffles and gelato.">
 <meta property="og:url" content="https://choconotts.github.io/chocoholics/">
 <meta property="og:image" content="https://choconotts.github.io/chocoholics/preview.jpg">
@@ -256,8 +258,15 @@ dialog p{margin-bottom:var(--s3);font-size:1rem}
 
 .photo,.ticket{background-image:none}
 .photo img{color:transparent}
+
+.cat{border-radius:12px;background-color:transparent;box-shadow:0 0 0 16px transparent;outline:2px solid transparent;outline-offset:16px;transition:background-color 500ms var(--ease-out),box-shadow 500ms var(--ease-out),outline-color 500ms var(--ease-out)}
+.cat.flash{background-color:color-mix(in srgb,var(--accent) 16%,transparent);box-shadow:0 0 0 16px color-mix(in srgb,var(--accent) 16%,transparent);outline-color:var(--accent)}
+.toast{position:fixed;z-index:60;left:50%;bottom:calc(var(--s4) + env(safe-area-inset-bottom,0px));transform:translate(-50%,8px);opacity:0;pointer-events:none;background:var(--text);color:var(--bg);padding:var(--s1) var(--s3);border-radius:999px;font-weight:500;font-size:.9375rem;line-height:1.5;white-space:nowrap;transition:opacity 200ms var(--ease-out),transform 200ms var(--ease-out)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.cat{transition:none}.toast{transition:none}}
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}.page{display:block}</style></noscript>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FoodEstablishment", "name": "Chocoholics", "alternateName": "Chocoholic’s", "description": "The sweetest secret in Nottingham. Milkshakes, cookie dough, brownies, waffles and gelato.", "url": "https://choconotts.github.io/chocoholics/", "image": "https://choconotts.github.io/chocoholics/preview.jpg", "servesCuisine": "Desserts", "hasMenu": "https://choconotts.github.io/chocoholics/#/menu", "address": {"@type": "PostalAddress", "streetAddress": "91 Mansfield Road", "addressLocality": "Nottingham", "postalCode": "NG1 3FN", "addressCountry": "GB"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "18:00", "closes": "01:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "18:00", "closes": "04:00"}]}</script>
 </head>
 <body>
 <div class="safe"></div>
@@ -281,6 +290,7 @@ dialog p{margin-bottom:var(--s3);font-size:1rem}
  <div class="ticker dark" aria-hidden="true"><div class="tk-track">Milkshakes ✦ Cookie dough ✦ Gelato ✦ Brownies ✦ Stick waffles ✦ Mocktails ✦ Loaded brownies ✦ Cakes ✦ Milk cake ✦ Loaded strawberries ✦ Matcha ✦ Milkshakes ✦ Cookie dough ✦ Gelato ✦ Brownies ✦ Stick waffles ✦ Mocktails ✦ Loaded brownies ✦ Cakes ✦ Milk cake ✦ Loaded strawberries ✦ Matcha ✦ Milkshakes ✦ Cookie dough ✦ Gelato ✦ Brownies ✦ Stick waffles ✦ Mocktails ✦ Loaded brownies ✦ Cakes ✦ Milk cake ✦ Loaded strawberries ✦ Matcha ✦ Milkshakes ✦ Cookie dough ✦ Gelato ✦ Brownies ✦ Stick waffles ✦ Mocktails ✦ Loaded brownies ✦ Cakes ✦ Milk cake ✦ Loaded strawberries ✦ Matcha ✦ </div></div>
 <div class="wrap"><div class="rail"><a href="#/visit"><small>Right now</small><span class="status"></span></a><div><small>On Google</small><span>★ 4.8 rating</span></div><a href="#/visit"><small>Find us</small><span>91 Mansfield Road</span></a><a href="#/event"><small>Limited event</small><span>The Secret Line →</span></a></div></div>
 <section><div class="wrap g"><div class="c6"><p class="eyebrow reveal">House specials</p><h2 class="reveal">Chocoholic’s special</h2></div><div class="r6 offset"><a class="sp reveal" href="#/menu" data-jump="c-cookie-dough"><span>Cookie dough</span><b>£7.99</b></a><a class="sp reveal" href="#/menu" data-jump="c-brownies"><span>Brownie</span><b>£6.49</b></a><a class="sp reveal" href="#/menu" data-jump="c-stick-waffles"><span>Double stick waffle</span><b>£5.99</b></a><a class="sp reveal" href="#/menu" data-jump="c-milk-cake"><span>Milk cake</span><b>£7.99</b></a></div></div></section>
+<section style="padding-top:0"><div class="wrap"><p class="eyebrow reveal">What are you craving?</p><div class="chips reveal" id="crave" aria-label="Flavours"></div></div></section>
  <section><div class="wrap g">
   <div class="c6"><p class="eyebrow reveal">What we make</p>
    <ol class="list reveal"><li><a href="#/menu" data-jump="c-milkshakes"><span class="n">01</span><span class="t">Milkshakes</span></a></li><li><a href="#/menu" data-jump="c-cookie-dough"><span class="n">02</span><span class="t">Cookie dough</span></a></li><li><a href="#/menu" data-jump="c-gelato"><span class="n">03</span><span class="t">Gelato</span></a></li><li><a href="#/menu" data-jump="c-brownies"><span class="n">04</span><span class="t">Brownies</span></a></li><li><a href="#/menu" data-jump="c-stick-waffles"><span class="n">05</span><span class="t">Stick waffles</span></a></li><li><a href="#/menu" data-jump="c-mocktails"><span class="n">06</span><span class="t">Mocktails</span></a></li><li><a href="#/menu" data-jump="c-loaded-brownies"><span class="n">07</span><span class="t">Loaded brownies</span></a></li><li><a href="#/menu" data-jump="c-cakes"><span class="n">08</span><span class="t">Cakes</span></a></li><li><a href="#/menu" data-jump="c-milk-cake"><span class="n">09</span><span class="t">Milk cake</span></a></li><li><a href="#/menu" data-jump="c-loaded-strawberries"><span class="n">10</span><span class="t">Loaded strawberries</span></a></li><li><a href="#/menu" data-jump="c-matcha"><span class="n">11</span><span class="t">Matcha</span></a></li></ol></div>
@@ -293,6 +303,7 @@ dialog p{margin-bottom:var(--s3);font-size:1rem}
  <p class="eyebrow">Menu</p><h2>Our menu</h2>
  <p class="note">Our desserts are prepared in a kitchen that handles nuts, peanuts, gluten (wheat), dairy (milk), eggs, and soya. <button class="linkbtn" id="aopen" type="button">Read the full allergen notice</button></p>
  <input id="q" type="search" placeholder="Search the menu" aria-label="Search the menu" autocomplete="off">
+ <p class="eyebrow" style="margin:var(--s3) 0 0">Find by flavour</p><div class="chips" id="flv" aria-label="Flavours"></div><p class="note" id="fcount" hidden style="margin:0 0 var(--s2)"></p>
  <div class="chips" aria-label="Menu categories"><button type="button" data-t="c-milkshakes">Milkshakes</button><button type="button" data-t="c-cookie-dough">Cookie dough</button><button type="button" data-t="c-gelato">Gelato</button><button type="button" data-t="c-brownies">Brownies</button><button type="button" data-t="c-stick-waffles">Stick waffles</button><button type="button" data-t="c-mocktails">Mocktails</button><button type="button" data-t="c-loaded-brownies">Loaded brownies</button><button type="button" data-t="c-cakes">Cakes</button><button type="button" data-t="c-milk-cake">Milk cake</button><button type="button" data-t="c-loaded-strawberries">Loaded strawberries</button><button type="button" data-t="c-matcha">Matcha</button></div>
  <div class="cats"><section class="cat" id="c-milkshakes" data-n="Milkshakes" data-p="4.99"><h3>Milkshakes<span class="cp">£4.99</span></h3><ul><li><span>Kinder-Bueno Thickshake</span></li><li><span>Ferrero Rocher Milkshake</span></li><li><span>KitKat Thickshake</span></li><li><span>Lotus Biscoff Thickshake</span></li><li><span>Snickers Thickshake</span></li><li><span>Oreo Thickshake</span></li><li><span>Strawberry Thickshake</span></li><li><span>Aeromint Thickshake</span></li><li><span>Chocolate Thickshake</span></li><li><span>Banana Thickshake</span></li></ul></section><section class="cat" id="c-cookie-dough" data-n="Cookie dough" data-p="6.99"><h3>Cookie dough<span class="cp">£6.99</span></h3><ul><li><span>Kinder Lovers Cookie Dough</span></li><li><span>Oreo Cookie Dough</span></li><li><span>Lotus Cookie Dough</span></li><li><span>Strawbella Cookie Dough</span></li><li><span>White Chocolate Cookie Dough</span></li><li><span>Kunafa Cookie Dough</span></li><li><span>Chocolate Fusion Cookie Dough</span></li><li><span>Chocoholic’s Special Cookie Dough</span><span>£7.99</span></li></ul></section><section class="cat" id="c-gelato" data-n="Gelato" data-p="2.00"><h3>Gelato<span class="cp">Any scoop £2.00</span></h3><ul><li><span>Bubblegum Gelato</span></li><li><span>Hazelnut and Chocolate Gelato</span></li><li><span>Coconut Gelato</span></li><li><span>Vanilla Gelato</span></li><li><span>Strawberry Gelato</span></li><li><span>Cookie and Cream Gelato</span></li><li><span>Caramel Gelato</span></li></ul></section><section class="cat" id="c-brownies" data-n="Brownies" data-p="6.49"><h3>Brownies<span class="cp">£6.49</span></h3><ul><li><span>Lotus Brownie</span></li><li><span>Oreo Brownie</span></li><li><span>Nutella Brownie</span></li><li><span>Ferrero Rocher Brownie</span></li><li><span>Strawbella Brownie</span></li><li><span>Kinder Brownie</span></li><li><span>Chocoholic’s Special Brownie</span></li><li><span>Kunafa Brownie</span></li></ul></section><section class="cat" id="c-stick-waffles" data-n="Stick waffles" data-p="4.99"><h3>Stick waffles<span class="cp">£4.99</span></h3><ul><li><span>Ferrero Rocher Double Stick Waffle</span></li><li><span>Chocolate Fusion Double Stick Waffle</span></li><li><span>Luxury Kunafa Double Stick Waffle</span></li><li><span>Oreo Waffle</span></li><li><span>Kinder Bueno Waffle</span></li><li><span>Strawberry Heaven Double Stick Waffle</span></li><li><span>Chocoholic’s Special Double Stick Waffle</span><span>£5.99</span></li></ul></section><section class="cat" id="c-mocktails" data-n="Mocktails" data-p="4.99"><h3>Mocktails<span class="cp">£4.99</span></h3><ul><li><span>Strawberry Punch</span></li><li><span>Blueberry</span></li><li><span>Virgin Mojito</span></li><li><span>Green Apple</span></li><li><span>Passion Fruit Punch</span></li><li><span>Bubblegum</span></li><li><span>Bluelagoon</span></li></ul></section><section class="cat" id="c-loaded-brownies" data-n="Loaded brownies" data-p="6.99"><h3>Loaded brownies<span class="cp">£6.99</span></h3><ul><li><span>Cloud Brownies</span></li><li><span>Nutella Brownies</span></li><li><span>Belgium Brownies</span></li></ul></section><section class="cat" id="c-cakes" data-n="Cakes" data-p="5.99"><h3>Cakes<span class="cp">£5.99</span></h3><ul><li><span>Red Velvet</span></li><li><span>Oreo Cheesecake</span></li><li><span>Nutella Cheesecake</span></li><li><span>Kinder Bueno Cheesecake</span></li><li><span>Lotus Biscoff Cheesecake</span></li><li><span>Ferrero Rocher Cheesecake</span></li><li><span>Matilda Cake</span><span>£7.49</span></li></ul></section><section class="cat" id="c-milk-cake" data-n="Milk cake" data-p="6.99"><h3>Milk cake<span class="cp">£6.99</span></h3><ul><li><span>Pistachio Milk Cake</span></li><li><span>Lotus Biscoff Milk Cake</span></li><li><span>Fruitella Milk Cake</span></li><li><span>Oreo and Cream Milk Cake</span></li><li><span>White Chocolate Milk Cake</span></li><li><span>Chocoholic’s Special Milk Cake</span><span>£7.99</span></li></ul></section><section class="cat" id="c-loaded-strawberries" data-n="Loaded strawberries" data-p="8.49"><h3>Loaded strawberries<span class="cp">£8.49</span></h3><ul><li><span>Milk Loaded Strawberries</span></li><li><span>Dubai Kunafa Loaded Strawberries</span></li><li><span>Milk Chocolate Loaded Brownie</span></li><li><span>Loaded Straw Brownie</span></li><li><span>Dubai Kunafa Loaded Brownie</span></li></ul></section><section class="cat" id="c-matcha" data-n="Matcha" data-p="4.99"><h3>Matcha<span class="cp">£4.99</span></h3><ul><li><span>Mango Matcha</span></li><li><span>Vanilla Matcha Latte</span></li><li><span>Strawberry Matcha Latte</span></li><li><span>Iced Matcha Latte</span></li></ul></section></div>
  <p class="made">Made fresh daily, with love and lots of chocolate</p>
@@ -344,11 +355,12 @@ dialog p{margin-bottom:var(--s3);font-size:1rem}
  <div class="c6"><p class="brandf">Chocoholics</p><p class="q">The sweetest secret in Nottingham</p><p>91 Mansfield Road, Nottingham, NG1 3FN</p></div>
  <div class="r6"><div class="fcols"><div><small>Hours</small><p>Mon closed<br>Tue–Thu 6pm–1am<br>Fri–Sun 6pm–4am</p></div><div><small>Explore</small><p><a href="#/">Home</a><br><a href="#/menu">Menu</a><br><a href="#/event">The Secret Line</a><br><a href="#/visit">Visit</a></p></div><div><small>Secret Line</small><p><a href="tel:07435852119">07435852119</a></p></div></div></div>
 </div><div class="wrap"><p class="fine">© Chocoholics, Nottingham</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <dialog id="allergy" aria-labelledby="at"><h3 id="at">Allergen notice</h3><p>Our desserts are prepared in a kitchen that handles nuts, peanuts, gluten (wheat), dairy (milk), eggs, and soya. If you have a severe food allergy or intolerance, please contact our team directly at the shop before placing your order so we can safely assist you.</p><button class="btn" id="aok" type="button">OK, I understand</button></dialog>
 
 <script>
 (function(){
-var R={'':['home','Chocoholics | Dessert shop in Nottingham'],menu:['menu','Menu | Chocoholics'],order:['order','Order | Chocoholics'],visit:['visit','Visit | Chocoholics'],event:['event','The Secret Line | Chocoholics']};
+var R={'':['home','Chocoholics | Late-night dessert shop in Nottingham'],menu:['menu','Menu | Chocoholics'],order:['order','Order | Chocoholics'],visit:['visit','Visit | Chocoholics'],event:['event','The Secret Line | Chocoholics']};
 var pages=document.querySelectorAll('.page'),tabs=document.querySelectorAll('.tabs a'),first=true;
 function askAllergy(){var d=document.getElementById('allergy'),seen=false;try{seen=sessionStorage.getItem('al')==='1'}catch(e){}
  if(!seen&&d&&!d.open&&d.showModal)d.showModal()}
@@ -358,9 +370,10 @@ function route(){
  tabs.forEach(function(a){if(ok&&a.getAttribute('data-r')===k)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
  document.title=hit[1];
  if(hit[0]==='menu')askAllergy();
+ if(hit[0]==='menu'&&window.__f){var ff=window.__f;window.__f=null;setTimeout(function(){applyFlavour(ff)},80)}
  if(!first)window.scrollTo({top:0,behavior:'instant'});
  first=false;
- if(hit[0]==='menu'&&window.__j){var jt=document.getElementById(window.__j);window.__j=null;if(jt)setTimeout(function(){jt.scrollIntoView({behavior:'smooth',block:'start'})},60)}
+ if(hit[0]==='menu'&&window.__j){var jt=document.getElementById(window.__j);window.__j=null;if(jt)setTimeout(function(){go(jt.id)},60)}
 }
 window.addEventListener('hashchange',route);route();
 
@@ -380,10 +393,23 @@ try{var n=lon(),s=status(n);
 }catch(e){}
 
 var q=document.getElementById('q'),cats=document.querySelectorAll('.cat'),none=document.getElementById('none');
-q.addEventListener('input',function(){var v=q.value.trim().toLowerCase(),shown=0;
- cats.forEach(function(c){var m=0;c.querySelectorAll('li').forEach(function(li){var ok=!v||li.textContent.toLowerCase().indexOf(v)>-1;li.hidden=!ok;if(ok)m++});c.hidden=!m;shown+=m});
- none.hidden=shown>0});
-document.querySelectorAll('.chips button').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.getAttribute('data-t'));if(t&&!t.hidden)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+var FL={Oreo:['oreo'],Biscoff:['biscoff','lotus'],Kinder:['kinder'],Kunafa:['kunafa'],Nutella:['nutella'],'Ferrero Rocher':['ferrero'],Strawberry:['strawberr'],Pistachio:['pistachio'],Matcha:['matcha'],Chocolate:['chocolate'],Banana:['banana'],Mango:['mango'],Caramel:['caramel']},fc=document.getElementById('fcount'),flv=document.getElementById('flv');
+function terms(v){var k;for(k in FL){if(k.toLowerCase()===v)return FL[k]}return [v]}
+function filt(){var v=q.value.trim().toLowerCase(),t=terms(v),shown=0;
+ cats.forEach(function(c){var m=0;c.querySelectorAll('li').forEach(function(li){var x=li.textContent.toLowerCase(),ok=!v||t.some(function(w){return x.indexOf(w)>-1});li.hidden=!ok;if(ok)m++});c.hidden=!m;shown+=m});
+ none.hidden=shown>0;
+ fc.hidden=!v||!shown;fc.textContent=shown+(shown===1?' item matches ':' items match ')+'“'+q.value.trim()+'”. This matches item names only, so please read the allergen notice above.';
+ flv.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(!!v&&b.textContent.toLowerCase()===v))})}
+q.addEventListener('input',filt);
+function applyFlavour(n){q.value=n;filt();flv.scrollIntoView({behavior:'smooth',block:'start'})}
+Object.keys(FL).forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent=n;b.addEventListener('click',function(){if(q.value.trim().toLowerCase()===n.toLowerCase()){q.value='';filt()}else applyFlavour(n)});flv.appendChild(b)});
+var cr=document.getElementById('crave');
+Object.keys(FL).forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent=n;b.addEventListener('click',function(){window.__f=n;location.hash='#/menu'});cr.appendChild(b)});
+var toastEl=document.getElementById('toast'),tt;
+function toast(s){toastEl.textContent=s;toastEl.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove('on')},2200)}
+function flash(t){document.querySelectorAll('.cat.flash').forEach(function(x){x.classList.remove('flash')});t.classList.add('flash');toast('Showing '+t.getAttribute('data-n'));setTimeout(function(){t.classList.remove('flash')},1700)}
+function go(id){var t=document.getElementById(id);if(!t)return;if(t.hidden){q.value='';filt()}t.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){flash(t)},400)}
+document.querySelectorAll('.chips button[data-t]').forEach(function(b){b.addEventListener('click',function(){go(b.getAttribute('data-t'))})});
 
 var st=document.getElementById('strip'),sx=document.getElementById('sx');
 try{if(sessionStorage.getItem('sx')==='1')st.hidden=true}catch(e){}

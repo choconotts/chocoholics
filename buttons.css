@@ -1,0 +1,240 @@
+/* Chocoholics button refresh: tactile, accessible controls in the brand palette. */
+:root {
+  --button-cocoa: #32141f;
+  --button-plum: #64243d;
+  --button-coral: #ee654f;
+  --button-gold: #ffc35c;
+  --button-cream: #fff8ee;
+  --button-line: #e8cfc5;
+  --button-focus: #e84832;
+  --button-shadow: 0 8px 20px rgba(87, 34, 48, .16);
+}
+
+/* Main actions */
+.btn,
+.tabs a.tabs-account,
+.tabs a.tabs-account[aria-current="page"],
+.order-route-cta,
+.cart-drawer-checkout,
+.invite-actions button,
+.account-actions .btn {
+  position: relative;
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.52);
+  border-radius: 999px;
+  background: linear-gradient(118deg, var(--button-gold) 0%, #ff9c58 46%, var(--button-coral) 100%);
+  color: var(--button-cocoa);
+  box-shadow: 0 5px 0 rgba(117, 47, 38, .13), var(--button-shadow);
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: .98rem;
+  font-weight: 700;
+  letter-spacing: .005em;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 180ms cubic-bezier(.22,.68,0,1), box-shadow 180ms ease, filter 180ms ease, background 180ms ease;
+}
+
+.btn.sm,
+.tabs a.tabs-account,
+.tabs a.tabs-account[aria-current="page"] { min-height: 42px; padding: 10px 19px; font-size: .91rem; }
+.btn::after,
+.order-route-cta::after {
+  content: "";
+  position: absolute;
+  inset: 1px 36% auto 1px;
+  height: 45%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,.3), transparent);
+  pointer-events: none;
+}
+.btn:hover:not(:disabled),
+.tabs a.tabs-account:hover,
+.order-route-cta:hover,
+.cart-drawer-checkout:hover:not(:disabled),
+.invite-actions button:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.08) brightness(1.02);
+  box-shadow: 0 7px 0 rgba(117, 47, 38, .11), 0 13px 26px rgba(87,34,48,.2);
+}
+.btn:active:not(:disabled),
+.tabs a.tabs-account:active,
+.order-route-cta:active,
+.invite-actions button:active {
+  transform: translateY(1px) scale(.985);
+  box-shadow: 0 2px 0 rgba(117,47,38,.13), 0 4px 10px rgba(87,34,48,.12);
+}
+.btn:disabled,
+.btn[aria-disabled="true"],
+.cart-drawer-checkout:disabled {
+  cursor: not-allowed;
+  filter: saturate(.45);
+  opacity: .56;
+  box-shadow: none;
+}
+
+/* Calm secondary actions */
+.account-secondary,
+.order-market-link,
+.cart-add-more,
+.invite-actions .invite-copy,
+.quiz-reset,
+.quiz-result button,
+.order-mode,
+.order-categories button,
+.basket-line-actions button,
+.account-favourites li button {
+  min-height: 44px;
+  border: 1px solid var(--button-line);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fffdf9, #fff5e9);
+  color: var(--button-plum);
+  box-shadow: 0 3px 10px rgba(87,34,48,.055);
+  font-family: "Outfit", Arial, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+.account-secondary { padding: 10px 18px; }
+.account-secondary:hover,
+.order-market-link:hover,
+.cart-add-more:hover,
+.invite-actions .invite-copy:hover,
+.quiz-result button:hover,
+.basket-line-actions button:hover,
+.account-favourites li button:hover {
+  transform: translateY(-1px);
+  border-color: #d7967d;
+  background: #fff0dc;
+  color: #7c293e;
+  box-shadow: 0 6px 15px rgba(87,34,48,.1);
+}
+.account-actions .account-secondary[data-auth-action="signup"] { border-color: var(--button-line); background: #fffdf9; color: var(--button-plum); }
+.account-actions .account-secondary[data-auth-action="signup"]:hover { background: #fff0dc; }
+.order-market-link { min-height: 42px; padding: 10px 15px; text-decoration: none; }
+.invite-actions .invite-copy { grid-column: 1 / -1; }
+.cart-add-more { width: 100%; min-height: 46px; border-style: dashed; }
+.quiz-reset { min-height: 42px; padding: 9px 17px; background: transparent; box-shadow: none; }
+.quiz-reset:hover { transform: translateY(-1px); background: #fff0dc; }
+.quiz-result button { min-height: 40px; padding: 8px 13px; }
+.order-mode { border-color: var(--button-line); background: linear-gradient(180deg,#fffdf9,#fff5e9); box-shadow: 0 4px 12px rgba(87,34,48,.06); }
+.order-mode[aria-pressed="true"] { border-color: var(--button-cocoa); background: linear-gradient(135deg,#512137,var(--button-cocoa)); box-shadow: 0 8px 18px rgba(50,20,31,.17); }
+.order-mode[aria-pressed="true"] .mode-icon { background: var(--button-gold); color: var(--button-cocoa); }
+.order-categories button { min-height: 42px; padding: 9px 15px; }
+.order-categories button[aria-pressed="true"] { border-color: var(--button-cocoa); background: var(--button-cocoa); color: var(--button-cream); box-shadow: 0 4px 12px rgba(50,20,31,.16); }
+.basket-line-actions button { width: 34px; height: 34px; min-height: 34px; padding: 0; border-radius: 50%; background: #fffdf9; }
+.basket-line-actions button:hover { transform: scale(1.08); border-color: #d7967d; background: #fff0dc; }
+
+/* Filter and selection controls */
+.menu-groups button,
+.chips button,
+.invite-themes button {
+  min-height: 42px;
+  padding: 9px 16px;
+  border: 1px solid var(--button-line);
+  border-radius: 999px;
+  background: #fffdf9;
+  color: #62434b;
+  font-family: "Outfit", Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+.menu-groups button:hover,
+.chips button:hover,
+.invite-themes button:hover { transform: translateY(-1px); border-color: #d9967f; background: #fff2e3; color: var(--button-plum); }
+.menu-groups button[aria-pressed="true"],
+.chips button[aria-pressed="true"],
+.invite-themes button[aria-pressed="true"] {
+  border-color: var(--button-cocoa);
+  background: linear-gradient(135deg, #512137, var(--button-cocoa));
+  color: var(--button-cream);
+  box-shadow: 0 4px 12px rgba(50,20,31,.17);
+}
+.menu-groups button[aria-pressed="true"]:hover,
+.chips button[aria-pressed="true"]:hover,
+.invite-themes button[aria-pressed="true"]:hover { background: #702b46; }
+.quiz-options button {
+  min-height: 68px;
+  border: 1px solid #ead3c8;
+  box-shadow: 0 3px 10px rgba(87,34,48,.045);
+}
+.quiz-options button:hover:not([aria-pressed="true"]) { transform: translateY(-2px); border-color: #dfab91; background: #fff0df; box-shadow: 0 8px 18px rgba(87,34,48,.09); }
+.quiz-options button[aria-pressed="true"] { box-shadow: 0 8px 18px rgba(50,20,31,.2); }
+
+/* Small utility and icon buttons */
+.menu-search-row button,
+.postcode-row button,
+.order-product-add,
+.menu-add-button,
+.menu-favourite-button,
+.site-cart-trigger,
+.cart-drawer-close,
+.cart-drawer-head button,
+.cart-drawer-lines button,
+.strip .x {
+  transition: transform 160ms cubic-bezier(.22,.68,0,1), background 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+.menu-search-row button,
+.postcode-row button {
+  min-height: 44px;
+  padding: 10px 17px;
+  border: 1px solid var(--button-cocoa);
+  border-radius: 999px;
+  background: var(--button-cocoa);
+  color: var(--button-cream);
+  font-family: "Outfit", Arial, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+.menu-search-row button:hover,
+.postcode-row button:hover { transform: translateY(-1px); background: #6c2945; box-shadow: 0 6px 14px rgba(50,20,31,.16); }
+.order-product-add {
+  min-width: 40px;
+  min-height: 38px;
+  border: 1px solid #efc68f;
+  border-radius: 50%;
+  background: linear-gradient(145deg,#ffe5a8,#ffb76f);
+  color: var(--button-cocoa);
+  box-shadow: 0 3px 8px rgba(110,54,37,.1);
+  cursor: pointer;
+}
+.order-product-add:hover { transform: scale(1.08); background: #ffd182; box-shadow: 0 5px 12px rgba(110,54,37,.17); }
+.menu-add-button { min-height: 34px; padding: 7px 13px; border-radius: 999px; box-shadow: 0 3px 8px rgba(87,34,48,.08); }
+.menu-add-button:hover { transform: translateY(-1px); box-shadow: 0 6px 12px rgba(87,34,48,.14); }
+.menu-favourite-button { box-shadow: 0 3px 9px rgba(87,34,48,.08); }
+.menu-favourite-button:hover { transform: scale(1.08); background: #fff0dc; border-color: #d7967d; }
+.menu-favourite-button[aria-pressed="true"] { background: #ffe4df; box-shadow: 0 3px 10px rgba(181,57,80,.12); }
+.site-cart-trigger { box-shadow: 0 8px 0 rgba(75,26,44,.1), 0 14px 30px rgba(65,22,44,.25); }
+.site-cart-trigger:hover { transform: translateY(-3px) scale(1.04); }
+.cart-drawer-close { box-shadow: 0 3px 9px rgba(87,34,48,.07); }
+.cart-drawer-close:hover { transform: rotate(8deg) scale(1.05); border-color: #d7967d; }
+.strip .x:hover { opacity: .7; transform: translateY(-50%) scale(1.08); }
+
+/* Consistent keyboard focus without hiding the native interaction outline. */
+:where(button, a.btn, a.tabs-account, .order-market-link):focus-visible {
+  outline: 3px solid var(--button-focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255,195,92,.32);
+}
+.linkbtn { border-radius: 5px; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.linkbtn:hover { color: #a8323b; text-decoration-thickness: 2px; }
+
+@media (max-width: 560px) {
+  .btn, .account-actions .btn, .account-actions .account-secondary { min-height: 50px; }
+  .menu-groups button, .chips button, .invite-themes button { min-height: 44px; }
+  .site-cart-trigger { width: 56px; height: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .tabs a.tabs-account, .account-secondary, .order-market-link, .cart-add-more,
+  .quiz-reset, .menu-groups button, .chips button, .invite-themes button,
+  .quiz-options button, .menu-search-row button, .postcode-row button,
+  .order-product-add, .menu-add-button, .menu-favourite-button,
+  .site-cart-trigger, .cart-drawer-close, .strip .x { transition: none !important; }
+}

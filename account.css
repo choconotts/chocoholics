@@ -1,0 +1,33 @@
+.account-page{min-height:70vh;background:radial-gradient(ellipse at 90% 5%,rgba(255,157,56,.24),transparent 32%),linear-gradient(145deg,#fff0df,#fff8ed 55%,#f8eafa)}
+.account-wrap{max-width:900px}
+.account-wrap h2{max-width:760px;margin:8px 0 12px;color:#421c2c;font:400 clamp(2.5rem,7vw,5rem)/1.02 var(--display);letter-spacing:-.035em}
+.account-intro{max-width:58ch;margin:0 0 30px;color:#68545a;font:500 1.05rem/1.6 "Outfit",Arial,sans-serif}
+.account-card{max-width:620px;padding:clamp(22px,4vw,36px);border:1px solid rgba(115,52,62,.16);border-radius:24px;background:rgba(255,253,249,.9);box-shadow:0 18px 48px rgba(82,33,54,.09)}
+.account-card label{display:block;margin:0 0 7px;color:#512039;font:700 .92rem "Outfit",Arial,sans-serif}
+.account-card input{display:block;width:100%;min-height:49px;margin:0 0 18px;padding:11px 13px;border:1px solid #d8cfc3;border-radius:12px;background:#fff;color:#32141f;font:500 1rem "Outfit",Arial,sans-serif}
+.account-card input:focus{outline:3px solid rgba(242,100,77,.2);border-color:#c85c47}
+.account-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.account-secondary,.account-link{min-height:46px;padding:10px 17px;border:1px solid #d9bac0;border-radius:999px;background:#fff;color:#64243d;font:700 .92rem "Outfit",Arial,sans-serif;cursor:pointer}
+.account-link{min-height:0;margin-top:14px;padding:4px 0;border:0;background:transparent;text-decoration:underline;text-underline-offset:3px}
+.account-card form .btn{font-family:"Outfit",Arial,sans-serif;cursor:pointer}
+.account-signed-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.account-signed-in p{margin:0;overflow-wrap:anywhere;color:#604750;font:500 1rem/1.5 "Outfit",Arial,sans-serif}
+.account-status{max-width:620px;min-height:1.5em;margin:12px 0;color:#512039;font:600 .95rem/1.5 "Outfit",Arial,sans-serif}
+.account-status.is-error{color:#a52e3c}
+.account-favourites{max-width:760px;margin-top:42px;padding:clamp(22px,4vw,32px);border-radius:22px;background:rgba(255,253,249,.76)}
+.account-favourites h3{margin:0 0 8px;color:#512039;font:400 clamp(1.6rem,4vw,2.3rem)/1.15 var(--display)}
+.account-favourites p{margin:0 0 14px;color:#765c61;font:500 .95rem/1.55 "Outfit",Arial,sans-serif}
+.account-favourites ul{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.account-favourites li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #eadbd2;border-radius:13px;background:#fffdf9;color:#421c2c;font:600 .96rem "Outfit",Arial,sans-serif}
+.account-favourites li a{color:#8a3445;text-decoration:none}
+.account-favourites li button{flex:none;padding:6px 11px;border:1px solid #e3bdc3;border-radius:999px;background:#fff;color:#762c42;font:700 .78rem "Outfit",Arial,sans-serif;cursor:pointer}
+.account-privacy{max-width:620px;margin:18px 0 0;color:#765c61;font:500 .82rem/1.55 "Outfit",Arial,sans-serif}
+.menu-favourite-button{flex:none;width:34px;height:34px;padding:0;border:1px solid #e9c9ad;border-radius:50%;background:#fffaf4;color:#8c3447;font-size:1.28rem;line-height:1;cursor:pointer}
+.menu-favourite-button[aria-pressed="true"]{background:#ffe5e0;border-color:#d87578;color:#b53950}
+.menu-favourite-button:focus-visible,.account-secondary:focus-visible,.account-link:focus-visible,.account-favourites button:focus-visible{outline:3px solid rgba(242,100,77,.35);outline-offset:2px}
+.tabs a.tabs-account,.tabs a.tabs-account[aria-current="page"]{align-self:center;margin-left:auto;padding:10px 20px;border:0;border-radius:999px;background:linear-gradient(120deg,#ffb84f,#f2644d);color:#32141f;font-weight:700;box-shadow:0 6px 16px rgba(202,83,62,.2);transition:transform 160ms ease,filter 160ms ease,box-shadow 160ms ease}
+.tabs a.tabs-account:hover{transform:translateY(-1px);filter:saturate(1.08);box-shadow:0 9px 20px rgba(202,83,62,.25)}
+.account-actions .btn,.account-actions .account-secondary{flex:1;min-width:150px;min-height:50px;text-align:center}
+.account-actions .account-secondary[data-auth-action="signup"]{border-color:#d9bac0;background:#fff;color:#64243d}
+.account-actions .btn[data-auth-action="login"]{box-shadow:0 8px 18px rgba(202,83,62,.2)}
+@media(max-width:560px){.account-actions{display:grid}.account-actions>*{width:100%;text-align:center}.account-favourites li{align-items:flex-start}.account-signed-in{align-items:flex-start;flex-direction:column}.tabs a.tabs-account,.tabs a.tabs-account[aria-current="page"]{padding:9px 15px}}

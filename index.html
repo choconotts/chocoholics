@@ -24,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="./account.css">
 <style>
 :root{--s1:8px;--s2:16px;--s3:24px;--s4:32px;--s6:48px;--s8:64px;--s12:96px;
 --bg:#f4efe8;--surface:#ebe4da;--text:#1d1a17;--muted:#6f655b;--line:#d8cfc3;--accent:#9a3b14;--accent-text:#f4efe8;
@@ -875,7 +876,7 @@ dialog h3{font-family:var(--display);font-size:1.8rem}
 <div class="strip" id="strip"><a class="strip-a" href="#/event"><span class="live"></span><b>Events</b> · No ongoing event at the moment</a><button class="x" id="sx" type="button" aria-label="Close announcement">×</button></div>
 <header class="top"><div class="wrap bar">
  <a class="brand" href="#/">Chocoholics</a>
-  <nav class="tabs" aria-label="Quick options"><a data-r="" href="#/">Home</a><a data-r="menu" href="#/menu">Menu</a><a data-r="quiz" href="#/quiz">Dessert match</a><a data-r="event" href="#/event">Events</a><a data-r="invite" href="#/invite">Invite</a><a data-r="visit" href="#/visit">Visit</a></nav>
+  <nav class="tabs" aria-label="Quick options"><a data-r="" href="#/">Home</a><a data-r="menu" href="#/menu">Menu</a><a data-r="quiz" href="#/quiz">Dessert match</a><a data-r="event" href="#/event">Events</a><a data-r="invite" href="#/invite">Invite</a><a data-r="visit" href="#/visit">Visit</a><a class="tabs-account" data-account-link data-r="account" href="#/account">Sign in</a></nav>
  <a class="btn sm" href="#/order">Order now</a>
 </div></header>
 
@@ -986,6 +987,23 @@ dialog h3{font-family:var(--display);font-size:1.8rem}
 
 <section class="page" data-page="event"><div class="wrap events-empty-page"><p class="eyebrow">What is happening</p><h2>Events</h2><div class="events-empty"><span aria-hidden="true">✦</span><h3>No ongoing event</h3><p>There are no special events running right now. Check back here for future announcements.</p></div><a class="btn" href="#/menu">Browse the menu</a></div></section>
 
+<section class="page account-page" data-page="account" aria-labelledby="accountTitle"><div class="wrap account-wrap">
+ <p class="eyebrow">Your Chocoholics account</p><h2 id="accountTitle">A little corner for your favourites.</h2>
+ <p class="account-intro">Create an account or log in to keep your favourite treats saved for next time.</p>
+ <div class="account-card" id="accountAuth">
+  <form id="accountForm" novalidate>
+   <label for="accountEmail">Email address</label><input id="accountEmail" name="email" type="email" autocomplete="email" required>
+   <label for="accountPassword">Password</label><input id="accountPassword" name="password" type="password" autocomplete="current-password" minlength="8" required>
+   <div class="account-actions"><button class="btn" type="submit" data-auth-action="login">Sign in</button><button class="account-secondary" type="submit" data-auth-action="signup">Create account</button></div>
+   <button class="account-link" id="forgotPassword" type="button">Forgot your password?</button>
+  </form>
+  <form id="newPasswordForm" hidden novalidate><label for="newAccountPassword">Choose a new password</label><input id="newAccountPassword" type="password" autocomplete="new-password" minlength="8" required><button class="btn" type="submit">Save new password</button></form>
+ </div>
+ <div class="account-card account-signed-in" id="accountSignedIn" hidden><p>Signed in as <strong id="accountUserEmail"></strong></p><button class="account-secondary" id="accountSignOut" type="button">Log out</button></div>
+ <p class="account-status" id="accountStatus" role="status" aria-live="polite"></p>
+ <section class="account-favourites" aria-labelledby="favouritesTitle"><h3 id="favouritesTitle">Your saved favourites</h3><p id="favouritesHint">Tap the heart beside any menu treat to save it here.</p><ul id="favouritesList"></ul></section>
+ <p class="account-privacy">Your password is handled securely by Supabase. We never see or store it ourselves.</p>
+</div></section>
 <section class="page" data-page="404"><div class="wrap lost">
  <p class="eyebrow">Page not found</p><p class="big">404</p>
  <h2>This page has melted.</h2>
@@ -996,14 +1014,14 @@ dialog h3{font-family:var(--display);font-size:1.8rem}
 
 <footer class="dark foot"><div class="wrap g">
  <div class="c6"><p class="brandf">Chocoholics</p><p class="q">The sweetest secret in Nottingham</p><p>91 Mansfield Road, Nottingham, NG1 3FN</p></div>
- <div class="r6"><div class="fcols"><div><small>Hours</small><p>Mon closed<br>Tue–Thu 6pm–1am<br>Fri–Sun 6pm–4am</p></div><div><small>Explore</small><p><a href="#/">Home</a><br><a href="#/menu">Menu</a><br><a href="#/event">Events</a><br><a href="#/invite">Sweet Invite</a><br><a href="#/visit">Visit</a></p></div><div><small>Support</small><p><a href="tel:+447435852119">Call 07435 852119</a></p><small>Order direct</small><p><a href="#/order">Secure card checkout</a></p></div></div></div>
+ <div class="r6"><div class="fcols"><div><small>Hours</small><p>Mon closed<br>Tue–Thu 6pm–1am<br>Fri–Sun 6pm–4am</p></div><div><small>Explore</small><p><a href="#/">Home</a><br><a href="#/menu">Menu</a><br><a href="#/event">Events</a><br><a href="#/invite">Sweet Invite</a><br><a href="#/visit">Visit</a><br><a href="#/account">Account</a></p></div><div><small>Support</small><p><a href="tel:+447435852119">Call 07435 852119</a></p><small>Order direct</small><p><a href="#/order">Secure card checkout</a></p></div></div></div>
 </div><div class="wrap"><p class="fine">© Chocoholics, Nottingham</p></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <dialog id="allergy" aria-labelledby="at"><h3 id="at">Allergen notice</h3><p>Our desserts are prepared in a kitchen that handles nuts, peanuts, gluten (wheat), dairy (milk), eggs, and soya. If you have a severe food allergy or intolerance, please contact our team directly at the shop before placing your order so we can safely assist you.</p><button class="btn" id="aok" type="button">OK, I understand</button></dialog>
 
 <script>
 (function(){
- var R={'':['home','Chocoholics | Late-night dessert shop in Nottingham'],menu:['menu','Menu | Chocoholics'],quiz:['quiz','Dessert Match | Chocoholics'],order:['order','Order | Chocoholics'],visit:['visit','Visit | Chocoholics'],event:['event','Events | Chocoholics'],invite:['invite','Sweet Invite | Chocoholics']};
+ var R={'':['home','Chocoholics | Late-night dessert shop in Nottingham'],menu:['menu','Menu | Chocoholics'],quiz:['quiz','Dessert Match | Chocoholics'],order:['order','Order | Chocoholics'],visit:['visit','Visit | Chocoholics'],event:['event','Events | Chocoholics'],invite:['invite','Sweet Invite | Chocoholics'],account:['account','Account | Chocoholics']};
 var pages=document.querySelectorAll('.page'),tabs=document.querySelectorAll('.tabs a');
 try{history.scrollRestoration='manual'}catch(e){}
 function askAllergy(){var d=document.getElementById('allergy'),seen=false;try{seen=sessionStorage.getItem('al')==='1'}catch(e){}
@@ -1118,5 +1136,7 @@ else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.is
 })();
 </script>
 <script src="./support-chat.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./account.js" defer></script>
 </body>
 </html>

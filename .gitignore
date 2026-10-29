@@ -1,0 +1,9 @@
+# Keep local credentials and Wrangler's generated account metadata out of Git.
+.env
+.env.*
+!.env.example
+**/.dev.vars
+**/.dev.vars.*
+**/.wrangler/
+**/node_modules/
+**/.DS_Store
